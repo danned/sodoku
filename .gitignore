@@ -1,0 +1,26 @@
+# Godot editor/import cache
+.godot/
+
+# Machine-local tool state
+.claude/
+.expo/
+
+# Local builds and exports
+build/
+
+# Local user data, signing, and platform tooling
+.kotlin/
+*.jks
+*.keystore
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# OS/editor files
+.DS_Store
+*.tmp
+*.log
+
+# Retained local migration backup, if present
+.legacy-expo/
