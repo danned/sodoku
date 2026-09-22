@@ -23,6 +23,12 @@ make web-serve
 
 Open `http://127.0.0.1:4173`. The exported progressive web app is written to `build/web/`. Browser saves use Godot's persistent `user://` filesystem, backed by IndexedDB when site storage is available.
 
+### GitHub Pages
+
+The [Pages workflow](.github/workflows/pages.yml) tests and exports the game with Godot 4.7.2, then deploys `build/web/` whenever a commit is pushed to `main`. Pull requests run the same tests and export without deploying. The workflow can also be started manually from the **Actions** tab.
+
+Before the first deployment, open **Settings → Pages** in the GitHub repository and set **Build and deployment → Source** to **GitHub Actions**. Once the workflow succeeds, the game will be available at `https://danned.github.io/soduko/`.
+
 During a game, use the on-screen controls or:
 
 - `1`–`9` to enter a number
@@ -63,3 +69,7 @@ The automated suite checks puzzle validity, unique solutions across all four dif
 - `scripts/main.gd`: responsive screen and board UI.
 - `scripts/tests/`: headless engine and UI smoke tests.
 - `assets/`: shared app icon and splash artwork.
+
+## License
+
+Copyright © 2026 Daniel Dahlberg. All rights reserved. The original work in this repository may not be copied, modified, distributed, or reused without prior written permission. Playing the official published version for personal, non-commercial purposes is permitted. See [LICENSE](LICENSE) for the complete terms and [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt) for software covered by other licenses.

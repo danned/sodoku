@@ -17,6 +17,8 @@ smoke:
 web-export:
 	mkdir -p build/web
 	$(GODOT) --headless --path . --export-release Web build/web/index.html
+	cp LICENSE build/web/LICENSE.txt
+	cp THIRD_PARTY_NOTICES.txt build/web/THIRD_PARTY_NOTICES.txt
 
 web-serve:
 	python3 -m http.server 4173 --directory build/web
