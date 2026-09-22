@@ -1,6 +1,6 @@
 GODOT ?= godot
 
-.PHONY: run editor test smoke web-export web-serve android-debug
+.PHONY: run editor import test smoke web-export web-serve android-debug
 
 run:
 	$(GODOT) --path .
@@ -8,10 +8,13 @@ run:
 editor:
 	$(GODOT) --editor --path .
 
-test:
+import:
+	$(GODOT) --headless --path . --import
+
+test: import
 	$(GODOT) --headless --path . --script res://scripts/tests/test_runner.gd
 
-smoke:
+smoke: import
 	$(GODOT) --headless --path . --script res://scripts/tests/ui_smoke.gd
 
 web-export:
